@@ -1,0 +1,50 @@
+<html> 
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.maindiv{
+    width:100%;
+    height:100%;
+
+}
+
+.container{
+    text-align:center;
+    margin-top:6px;
+}
+
+.btn{
+    color:blueviolet;
+    border: 5px solid rgb(7, 7, 124);
+    background:rgb(134, 197, 221);
+    font-size: 20px;
+    padding:10px 20px;
+
+}
+
+
+
+.containt{
+    height:50vh;
+    width:100%;
+    background-image:url(23.png);
+    text-align: center;
+}
+
+
+.footer{
+    margin-top:10pxs;
+    text-align: center;
+    color:aliceblue;
+    height:5vh;
+    width:100%;
+    background-color: rgb(27, 22, 15);
+}
+
+
+
+
+</html>
