@@ -46,7 +46,7 @@ body{
     
    }
 
-   @keyframes example {
+   @keyframes anime {
 
     0%{ background-color:aqua; top:0 ; left: 470px; }
     25%   {background-color:pink; top: 0; left: 570px;}
