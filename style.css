@@ -5,36 +5,36 @@ body{
     padding:0;
 }
 
+body{background-image:url(23.png);}
+
 .maindiv{
     width:100%;
     height:100%;
 
 }
 
-.container{
-    text-align:center;
-    margin-top:6px;
-}
 
-.btn{
+
+.div{
     color:rgb(226, 43, 195);
-    border: 7px solid rgb(7, 116, 124);
-    background:rgb(134, 197, 221);
-    font-size: 4.7vh;
-    padding:19px 18px;
+    border: 0.8vh solid rgb(87, 69, 185);
+    background:none;
+    font-size: 2rem;
+    padding:2px;
+    margin: 2px;
+    float:right;
 
 }
 
 
 
 .containt{
-    height: 90vh;
+    height:82%;
     width:100%;
-    background-image:url(23.png);
     text-align: center;
 }
 
-.anime{
+/*.anime{
     height:70px;
     width: 70px;
     animation-name: example;
@@ -75,15 +75,14 @@ body{
     75%   {background-color: rgb(139, 70, 185);top:200px; left:400}
    100%    {background-color: rgb(186, 226, 43);top:0;left: 770px;}
    }
-   
+   */
    
 .footer{
-    margin-top:10px;
     text-align: center;
     color:aliceblue;
     height:5vh;
     width:100%;
-    background-color:rgb(13, 17, 13);
+    background-color:none;
 }
 
 
