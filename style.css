@@ -26,6 +26,11 @@ body{background-image:url(23.png);}
 
 }
 
+.div:hover{
+    background-color: rgb(42, 196, 207);
+    font-size:2rem;
+}
+
 
 
 .containt{
@@ -34,48 +39,29 @@ body{background-image:url(23.png);}
     text-align: center;
 }
 
-/*.anime{
-    height:70px;
-    width: 70px;
-    animation-name: example;
+#anime{
+    height: 2rem;
+    width: 2rem;
+    animation-name: anime;
     position: relative;
     animation-duration: 4s;
-    background-color: aqua;
+    background-color:none;
     position: relative;
-    animation-iteration-count: infinite;
+    animation-iteration-count:2;
+    animation-direction: alternate-reverse;
     
    }
 
-   @keyframes anime {
+   @keyframes anime{
 
-    0%{ background-color:aqua; top:0 ; left: 470px; }
-    25%   {background-color:pink; top: 0; left: 570px;}
-    50%   {background-color: brown;top:200px; left:570px}
-    75%   {background-color: rgb(139, 70, 185);top:200px; left:0}
-   100%    {background-color: rgb(186, 226, 43);top:0;left: 470px;}
+    0%{ background-color:aqua; top:0 ; left: 60%; }
+    25%   {background-color:pink; top: 50%; left: 60%;}
+    50%   {background-color: brown;top:50%; left:40%}
+    75%   {background-color: rgb(139, 70, 185);top:0%; left:40%}
+    100%   {background-color: rgb(185, 70, 160);top:0%; left: 60%}
    }
 
-   .anime2{
-    height:70px;
-    width: 70px;
-    animation-name: anime2;
-    position: relative;
-    animation-duration: 4s;
-    background-color: aqua;
-    position: relative;
-    animation-iteration-count: infinite;
-    
-   }
 
-   @keyframes anime2 {
-
-    0%{ background-color:aqua; top:0 ; left: 770px; }
-    25%   {background-color:pink; top: 0; left: 800px;}
-    50%   {background-color: brown;top:200px; left:800px}
-    75%   {background-color: rgb(139, 70, 185);top:200px; left:400}
-   100%    {background-color: rgb(186, 226, 43);top:0;left: 770px;}
-   }
-   */
    
 .footer{
     text-align: center;
