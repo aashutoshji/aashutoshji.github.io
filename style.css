@@ -27,16 +27,20 @@ body{background-image:url(23.png);}
 }
 
 .div:hover{
-    background-color: rgb(42, 196, 207);
+    background-color: rgb(87, 184, 190);
     font-size:2rem;
 }
 
 
 
 .containt{
-    height:82%;
     width:100%;
     text-align: center;
+}
+
+#hello{
+    color: rgb(235, 5, 120);
+    font-size: 10vh;
 }
 
 #anime{
