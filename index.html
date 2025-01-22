@@ -152,6 +152,16 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            animation: galleryAnim 1.5s infinite alternate;
+        }
+
+        @keyframes galleryAnim {
+            from {
+                transform: rotate(0deg) scale(1);
+            }
+            to {
+                transform: rotate(5deg) scale(1.1);
+            }
         }
 
         .gallery-item img {
@@ -250,7 +260,7 @@
 
     <div class="container">
         <div class="profile">
-            <img src="/mnt/data/img.jpeg" alt="Aashutosh Mani Tripathi">
+            <img src="img.jpeg" alt="Aashutosh Mani Tripathi">
             <h1>Aashutosh Mani Tripathi</h1>
             <p>Welcome to my personal portfolio. Explore and connect with me!</p>
         </div>
@@ -272,16 +282,16 @@
         <div class="gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid" id="galleryGrid" style="display: none;">
-                <div class="gallery-item"><img src="/mnt/data/20240331_074729.jpg" alt="Gallery Image 1"></div>
-                <div class="gallery-item"><img src="/mnt/data/311000083_684537833332005_1429820785974567809_n.jpg" alt="Gallery Image 2"></div>
-                <div class="gallery-item"><img src="/mnt/data/1714468295732.jpg" alt="Gallery Image 3"></div>
-                <div class="gallery-item"><img src="/mnt/data/IMG_20230517_101648.jpg" alt="Gallery Image 4"></div>
-                <div class="gallery-item"><img src="/mnt/data/IMG_20231212_110351_026.png.webp" alt="Gallery Image 5"></div>
-                <div class="gallery-item"><img src="/mnt/data/IMG_20240430_144337.jpg" alt="Gallery Image 6"></div>
-                <div class="gallery-item"><img src="/mnt/data/IMG-20230112-WA0010.jpg" alt="Gallery Image 7"></div>
-                <div class="gallery-item"><img src="/mnt/data/Untitled design (1).png" alt="Gallery Image 8"></div>
-                <div class="gallery-item"><img src="/mnt/data/Snapinsta.app_329791876_522023260075751_2636728228879574199_n_1080.jpg" alt="Gallery Image 9"></div>
-                <div class="gallery-item"><img src="/mnt/data/Snapinsta.app_360045832_135757496219915_3381360449257949797_n_1080.jpg" alt="Gallery Image 10"></div>
+                <div class="gallery-item"><img src="20240331_074729.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="311000083_684537833332005_1429820785974567809_n.jpg" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="1714468295732.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="IMG_20230517_101648.jpg" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="IMG_20231212_110351_026.png.webp" alt="Gallery Image 5"></div>
+                <div class="gallery-item"><img src="IMG_20240430_144337.jpg" alt="Gallery Image 6"></div>
+                <div class="gallery-item"><img src="IMG-20230112-WA0010.jpg" alt="Gallery Image 7"></div>
+                <div class="gallery-item"><img src="Untitled design (1).png" alt="Gallery Image 8"></div>
+                <div class="gallery-item"><img src="Snapinsta.app_329791876_522023260075751_2636728228879574199_n_1080.jpg" alt="Gallery Image 9"></div>
+                <div class="gallery-item"><img src="Snapinsta.app_360045832_135757496219915_3381360449257949797_n_1080.jpg" alt="Gallery Image 10"></div>
             </div>
         </div>
 
