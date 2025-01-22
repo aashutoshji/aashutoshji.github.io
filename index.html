@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aashutosh Mani Tripathi</title>
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --header-color: #333333;
+            --link-bg: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1e1e1e;
+            --text-color: #ffffff;
+            --header-color: #444444;
+            --link-bg: linear-gradient(90deg, #3a3a3a, #5a5a5a);
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
-            background-color: #333;
+            background-color: var(--header-color);
             color: white;
             text-align: center;
             padding: 1rem 0;
@@ -45,24 +60,34 @@
             }
         }
 
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
         .profile img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 1.5s ease;
         }
 
         .profile h1 {
             margin: 1rem 0 0.5rem;
             font-size: 2.5rem;
-            color: #fff;
+            color: var(--text-color);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .profile p {
             font-size: 1.2rem;
-            color: #f8f8f8;
+            color: var(--text-color);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -73,7 +98,7 @@
 
         .sections h2 {
             font-size: 2rem;
-            color: #333;
+            color: var(--text-color);
             margin-bottom: 1rem;
         }
 
@@ -90,7 +115,7 @@
         .links a {
             text-decoration: none;
             color: white;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: var(--link-bg);
             padding: 0.7rem 1.5rem;
             margin: 0.5rem;
             border-radius: 50px;
@@ -105,13 +130,114 @@
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
         }
 
+        .gallery {
+            margin: 3rem 0;
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
         footer {
             text-align: center;
             margin-top: 2rem;
             padding: 1rem;
-            background-color: #333;
+            background-color: var(--header-color);
             color: white;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: var(--header-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: #555;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content input {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid var(--text-color);
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        .modal-content button {
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: var(--link-bg);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content button:hover {
+            background: #555;
         }
     </style>
 </head>
@@ -119,6 +245,8 @@
     <header>
         <h1>Welcome to My Portfolio</h1>
     </header>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Night Mode</button>
 
     <div class="container">
         <div class="profile">
@@ -141,6 +269,15 @@
             <p>Graphic design is where my creativity meets technology. I love crafting visual content that communicates messages effectively and beautifully.</p>
         </div>
 
+        <div class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid" style="display: none;">
+                <div class="gallery-item"><img src="/mnt/data/img1.jpeg" alt="Gallery Image 1"></div>
+                <div class="gallery-item"><img src="/mnt/data/img2.jpeg" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="/mnt/data/img3.jpeg" alt="Gallery Image 3"></div>
+            </div>
+        </div>
+
         <div class="links">
             <a href="https://wa.me/918532042832" target="_blank">Contact Me</a>
             <a href="https://www.instagram.com/aashutosh.mani.tripathi/" target="_blank">Follow Me</a>
@@ -150,5 +287,37 @@
     <footer>
         <p>&copy; 2025 Aashutosh Mani Tripathi. All Rights Reserved.</p>
     </footer>
+
+    <div class="modal" id="pinModal">
+        <div class="modal-content">
+            <h2>Enter PIN to Access Gallery</h2>
+            <input type="password" id="pinInput" placeholder="Enter PIN">
+            <button onclick="validatePin()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        const correctPin = "1995";
+
+        function toggleTheme() {
+            document.body.dataset.theme = document.body.dataset.theme === "dark" ? "" : "dark";
+        }
+
+        function openGallery() {
+            document.getElementById("pinModal").style.display = "flex";
+        }
+
+        function validatePin() {
+            const inputPin = document.getElementById("pinInput").value;
+            if (inputPin === correctPin) {
+                document.getElementById("pinModal").style.display = "none";
+                document.getElementById("galleryGrid").style.display = "grid";
+            } else {
+                alert("Incorrect PIN. Please try again.");
+            }
+        }
+
+        document.querySelector(".gallery h2").addEventListener("click", openGallery);
+    </script>
 </body>
 </html>
